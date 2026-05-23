@@ -1,0 +1,366 @@
+/* --- GLOBAL STYLES & CRAP PRINCIPLES --- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap');
+
+:root {
+    --biru-laut: #0F4C81;
+    --hijau-mangrove: #2E8B57;
+    --cream-pasir: #F5E6CA;
+    --putih: #FFFFFF;
+    --abu-gelap: #333333;
+    --abu-terang: #F9F9F9;
+    --shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Untuk efek smooth scroll antar section */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--abu-gelap);
+    background-color: var(--putih);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--biru-laut);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.bg-light {
+    background-color: var(--abu-terang);
+}
+
+/* Garis pembatas untuk Proximity & Repetition */
+.divider {
+    height: 4px;
+    width: 60px;
+    background-color: var(--hijau-mangrove);
+    margin: 15px 0 25px 0;
+}
+
+.divider-center {
+    height: 4px;
+    width: 60px;
+    background-color: var(--hijau-mangrove);
+    margin: 15px auto 40px auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* --- 1. NAVBAR --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--putih);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--biru-laut);
+    border: 2px solid var(--biru-laut);
+    padding: 5px 15px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--hijau-mangrove);
+}
+
+.search-icon {
+    color: var(--biru-laut);
+}
+
+/* --- 2. HERO SECTION --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 5% 100px;
+    background-color: var(--cream-pasir); /* Contrast background */
+    min-height: 80vh;
+}
+
+.hero-text {
+    flex: 1;
+    padding-right: 50px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: var(--abu-gelap);
+}
+
+.hero-image-placeholder {
+    flex: 1;
+    height: 400px;
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    position: relative;
+    /* Ini mewakili area abu-abu besar di wireframe */
+}
+
+/* --- BUTTONS --- */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--biru-laut);
+    color: var(--putih);
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--hijau-mangrove);
+}
+
+.btn-outline {
+    display: inline-block;
+    border: 2px solid var(--biru-laut);
+    color: var(--biru-laut);
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: var(--biru-laut);
+    color: var(--putih);
+}
+
+.mt-4 { margin-top: 40px; }
+
+/* --- 3. HIGHLIGHTS CARDS --- */
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: -60px; /* Overlapping hero like wireframe logic */
+    position: relative;
+    z-index: 10;
+}
+
+.card-highlight {
+    background-color: var(--putih);
+    padding: 30px;
+    border: 1px solid #EAEAEA;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.card-highlight h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+/* --- 4. TENTANG KAMI --- */
+.tentang {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.tentang-text {
+    flex: 1;
+}
+
+.tentang-image {
+    flex: 1;
+}
+
+.tentang-image img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* --- 5. LAYANAN / FASILITAS --- */
+.layanan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card-layanan {
+    background-color: var(--putih);
+    border: 1px solid #EAEAEA;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-layanan img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-body h3 {
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+/* --- 6. LOKASI & KONTAK --- */
+.lokasi-kontak {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.peta-lokasi {
+    flex: 2;
+}
+
+.info-kontak {
+    flex: 1;
+}
+
+.info-kontak ul {
+    list-style: none;
+}
+
+.info-kontak ul li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+}
+
+.info-kontak ul li i {
+    color: var(--hijau-mangrove);
+    font-size: 1.2rem;
+    width: 20px;
+}
+
+/* --- 7. GALERI --- */
+.text-center {
+    text-align: center;
+}
+
+.galeri-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.galeri-row img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    background-color: #E0E0E0;
+    border: 1px solid #CCC; /* Styling wireframe placeholder */
+}
+
+/* --- 8. FOOTER --- */
+footer {
+    background-color: var(--abu-gelap);
+    color: var(--putih);
+    padding: 60px 0 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-brand h3 {
+    color: var(--putih);
+    margin-bottom: 15px;
+}
+
+.footer-links h4, .footer-social h4 {
+    color: var(--cream-pasir);
+    margin-bottom: 20px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a:hover {
+    color: var(--hijau-mangrove);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: var(--hijau-mangrove);
+}
