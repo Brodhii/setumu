@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri — Wisata Setumu Dompak</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">SETUMU DOMPAK</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#tentang">Tentang Kami</a></li>
+            <li><a href="index.html#layanan">Layanan</a></li>
+            <li><a href="index.html#lokasi">Lokasi</a></li>
+            <li><a href="menu.html">Menu Makanan</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="index.html#kontak">Kontak</a></li>
+            <li><a href="#" class="search-icon"><i class="fas fa-search"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+        <h2>Galeri Pantai Setumu</h2>
+        <div class="divider-center"></div>
+        <p>Dokumentasi keindahan alam, aktivitas wisata, dan momen terbaik di Pantai Setumu.</p>
+    </div>
+
+    <!-- FILTER -->
+    <div class="filter-wrap">
+        <button class="btn-filter active" data-filter="all">Semua</button>
+        <button class="btn-filter" data-filter="pantai">🏖 Pantai</button>
+        <button class="btn-filter" data-filter="sunset">🌅 Sunset</button>
+        <button class="btn-filter" data-filter="wisatawan">👨‍👩‍👧 Wisatawan</button>
+        <button class="btn-filter" data-filter="kuliner">🍽 Kuliner</button>
+        <button class="btn-filter" data-filter="event">🎊 Event</button>
+    </div>
+
+    <!-- GALLERY GRID -->
+    <div class="gallery-section">
+        <div class="gallery-grid" id="galleryGrid">
+
+            <div class="gallery-item" data-category="pantai" data-caption="Pesisir Pantai Setumu">
+                <div class="gallery-placeholder"><i class="fas fa-water"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="pantai" data-caption="Dermaga Pantai Setumu">
+                <div class="gallery-placeholder"><i class="fas fa-anchor"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="sunset" data-caption="Sunset di Pantai Setumu">
+                <div class="gallery-placeholder"><i class="fas fa-sun"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="wisatawan" data-caption="Pengunjung Bermain di Pantai">
+                <div class="gallery-placeholder"><i class="fas fa-person-walking"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="kuliner" data-caption="Kuliner Seafood Setumu">
+                <div class="gallery-placeholder"><i class="fas fa-fish"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="pantai" data-caption="Ombak Pantai Setumu">
+                <div class="gallery-placeholder"><i class="fas fa-water"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="event" data-caption="Festival Budaya Melayu">
+                <div class="gallery-placeholder"><i class="fas fa-star"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="sunset" data-caption="Golden Hour Pantai Setumu">
+                <div class="gallery-placeholder"><i class="fas fa-cloud-sun"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="wisatawan" data-caption="Spot Foto Mangrove">
+                <div class="gallery-placeholder"><i class="fas fa-camera"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="pantai" data-caption="Pasir Putih Setumu">
+                <div class="gallery-placeholder"><i class="fas fa-umbrella-beach"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="kuliner" data-caption="Ikan Bakar Bumbu Melayu">
+                <div class="gallery-placeholder"><i class="fas fa-fire-burner"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="event" data-caption="Lomba Perahu Tradisional">
+                <div class="gallery-placeholder"><i class="fas fa-sailboat"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="wisatawan" data-caption="Keluarga Berwisata di Setumu">
+                <div class="gallery-placeholder"><i class="fas fa-people-group"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="sunset" data-caption="Refleksi Matahari Terbenam">
+                <div class="gallery-placeholder"><i class="fas fa-sun"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="pantai" data-caption="Mangrove Walk Setumu">
+                <div class="gallery-placeholder"><i class="fas fa-tree"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="wisatawan" data-caption="Bermain di Tepi Pantai">
+                <div class="gallery-placeholder"><i class="fas fa-child-reaching"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="kuliner" data-caption="Es Kelapa Muda Segar">
+                <div class="gallery-placeholder"><i class="fas fa-glass-water"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="event" data-caption="Pertunjukan Seni Budaya">
+                <div class="gallery-placeholder"><i class="fas fa-music"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="pantai" data-caption="Panorama Laut Setumu">
+                <div class="gallery-placeholder"><i class="fas fa-binoculars"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="sunset" data-caption="Siluet Senja Pantai">
+                <div class="gallery-placeholder"><i class="fas fa-moon"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+            <div class="gallery-item" data-category="pantai" data-caption="Batu Karang Pantai Setumu">
+                <div class="gallery-placeholder"><i class="fas fa-mountain"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="wisatawan" data-caption="Selfie di Spot Favorit">
+                <div class="gallery-placeholder"><i class="fas fa-camera-retro"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="kuliner" data-caption="Otak-otak Bakar Khas Kepri">
+                <div class="gallery-placeholder"><i class="fas fa-utensils"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="event" data-caption="Upacara Adat Melayu">
+                <div class="gallery-placeholder"><i class="fas fa-flag"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-category="sunset" data-caption="Langit Sore yang Indah">
+                <div class="gallery-placeholder"><i class="fas fa-cloud-sun-rain"></i></div>
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+        <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+        <div class="lightbox-placeholder" id="lightboxContent">
+            <i class="fas fa-image"></i>
+        </div>
+        <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>SETUMU DOMPAK</h3>
+                <p>Meningkatkan aksesibilitas informasi pariwisata daerah melalui digitalisasi yang modern dan interaktif.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Tautan Cepat</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.html#tentang">Tentang Kami</a></li>
+                    <li><a href="index.html#layanan">Layanan</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Informasi</h4>
+                <ul>
+                    <li><a href="index.html#lokasi">Lokasi Peta</a></li>
+                    <li><a href="galeri.html">Galeri Foto</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Ikuti Kami</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script>
+        // Filter
+        const galleryItems = [...document.querySelectorAll('.gallery-item')];
+        document.querySelectorAll('.btn-filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                galleryItems.forEach(item => {
+                    item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
+                });
+            });
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        let currentIndex = 0;
+
+        function getVisible() { return galleryItems.filter(i => i.style.display !== 'none'); }
+
+        function openLightbox(index) {
+            const visible = getVisible();
+            currentIndex = ((index % visible.length) + visible.length) % visible.length;
+            lightboxCaption.textContent = visible[currentIndex].dataset.caption || '';
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        galleryItems.forEach((item, i) => {
+            item.addEventListener('click', () => {
+                const visible = getVisible();
+                openLightbox(visible.indexOf(item));
+            });
+        });
+
+        document.getElementById('lightboxClose').onclick = () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+        document.getElementById('lightboxPrev').onclick = () => openLightbox(currentIndex - 1);
+        document.getElementById('lightboxNext').onclick = () => openLightbox(currentIndex + 1);
+        lightbox.addEventListener('click', e => {
+            if (e.target === lightbox) { lightbox.classList.remove('active'); document.body.style.overflow = ''; }
+        });
+        document.addEventListener('keydown', e => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'ArrowLeft')  openLightbox(currentIndex - 1);
+            if (e.key === 'ArrowRight') openLightbox(currentIndex + 1);
+            if (e.key === 'Escape')     { lightbox.classList.remove('active'); document.body.style.overflow = ''; }
+        });
+    </script>
+</body>
+</html>
