@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wisata Setumu Dompak</title>
+    <title>Wisata Setumu Dompak — Ekowisata Kepulauan Riau</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="logo">SETUMU DOMPAK</div>
         <ul class="nav-links">
@@ -16,22 +17,27 @@
             <li><a href="#tentang">Tentang Kami</a></li>
             <li><a href="#layanan">Layanan</a></li>
             <li><a href="#lokasi">Lokasi</a></li>
-            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="menu.html">Menu Makanan</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="faq.html">FAQ</a></li>
             <li><a href="#kontak">Kontak</a></li>
             <li><a href="#" class="search-icon"><i class="fas fa-search"></i></a></li>
         </ul>
     </nav>
 
+    <!-- HERO -->
     <section id="beranda" class="hero">
         <div class="hero-text">
             <h1>Pesona Alam Setumu Dompak</h1>
             <p>Destinasi wisata pesisir dan hutan mangrove yang menenangkan, menawarkan pelarian sempurna dengan nuansa Melayu yang kental.</p>
-            <a href="#layanan" class="btn-primary">Jelajahi Sekarang</a>
+            <a href="#layanan" class="btn-primary">
+                <i class="fas fa-compass"></i> Jelajahi Sekarang
+            </a>
         </div>
-        <div class="hero-image-placeholder">
-            </div>
+        <div class="hero-image-placeholder"></div>
     </section>
 
+    <!-- HIGHLIGHT CARDS -->
     <section class="highlights container">
         <div class="card-highlight">
             <h3>Buka Setiap Hari</h3>
@@ -47,84 +53,89 @@
         </div>
     </section>
 
+    <!-- TENTANG KAMI -->
     <section id="tentang" class="tentang container">
-        <div class="tentang-text">
+        <div class="tentang-text reveal-left">
             <h2>Tentang Kami</h2>
             <div class="divider"></div>
             <p>Berawal dari kawasan konservasi, Setumu Dompak kini berkembang menjadi ekowisata unggulan. Kami menggabungkan keindahan panorama laut dengan rimbunnya hutan mangrove untuk memberikan pengalaman wisata yang edukatif dan menenangkan bagi setiap pengunjung.</p>
         </div>
-        <div class="tentang-image">
-            <img src="https://via.placeholder.com/500x300" alt="Tentang Wisata Setumu">
+        <div class="tentang-image reveal-right">
+            <img src="https://via.placeholder.com/500x300/a8d0b8/0F4C81?text=Pantai+Setumu" alt="Tentang Wisata Setumu">
         </div>
     </section>
 
+    <!-- LAYANAN & FASILITAS -->
     <section id="layanan" class="layanan bg-light">
         <div class="container">
-            <h2 class="section-title">Layanan & Fasilitas</h2>
+            <h2 class="section-title reveal">Layanan &amp; Fasilitas</h2>
             <div class="divider-center"></div>
-            
             <div class="layanan-grid">
                 <div class="card-layanan">
-                    <img src="https://via.placeholder.com/400x200" alt="Sewa Pondok">
+                    <img src="https://via.placeholder.com/400x200/c8ddf5/0F4C81?text=Sewa+Pondok" alt="Sewa Pondok">
                     <div class="card-body">
                         <h3>Sewa Pondok</h3>
                         <p>Nikmati suasana pantai dengan bersantai di pondok nyaman bersama keluarga.</p>
-                        <a href="#kontak" class="btn-outline">Pesan Sekarang</a>
+                        <a href="#kontak" class="btn-outline"><span>Pesan Sekarang</span></a>
                     </div>
                 </div>
                 <div class="card-layanan">
-                    <img src="https://via.placeholder.com/400x200" alt="Spot Foto">
+                    <img src="https://via.placeholder.com/400x200/c8e4d0/0F4C81?text=Spot+Foto" alt="Spot Foto">
                     <div class="card-body">
                         <h3>Spot Foto Estetik</h3>
                         <p>Abadikan momen tak terlupakan dengan latar belakang alam yang memukau.</p>
-                        <a href="#galeri" class="btn-outline">Lihat Galeri</a>
+                        <a href="galeri.html" class="btn-outline"><span>Lihat Galeri</span></a>
                     </div>
                 </div>
                 <div class="card-layanan">
-                    <img src="https://via.placeholder.com/400x200" alt="Area Santai">
+                    <img src="https://via.placeholder.com/400x200/f5e4c8/0F4C81?text=Area+Rekreasi" alt="Area Santai">
                     <div class="card-body">
                         <h3>Area Rekreasi</h3>
                         <p>Kawasan luas yang cocok untuk kegiatan berkumpul dan bermain santai.</p>
-                        <a href="#kontak" class="btn-outline">Info Lanjut</a>
+                        <a href="#kontak" class="btn-outline"><span>Info Lanjut</span></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- LOKASI & KONTAK -->
     <section id="lokasi" class="lokasi-kontak container">
-        <div class="peta-lokasi">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.3100492018316!2d104.449733!3d0.880922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwNTInNTEuMyJOIDEwNMKwMjcnMTAuNSJF!5e0!3m2!1sid!2sid!4v1680000000000!5m2!1sid!2sid" width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="peta-lokasi reveal-left">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.3100492018316!2d104.449733!3d0.880922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwNTInNTEuMyJOIDEwNMKwMjcnMTAuNSJF!5e0!3m2!1sid!2sid!4v1680000000000!5m2!1sid!2sid"
+                width="100%" height="300" style="border:0; border-radius: 14px;" allowfullscreen="" loading="lazy"></iframe>
         </div>
-        <div class="info-kontak">
+        <div class="info-kontak reveal-right">
             <h2>Hubungi Kami</h2>
             <div class="divider"></div>
             <ul>
                 <li><i class="fas fa-map-marker-alt"></i> Jl. Dompak, Tanjungpinang, Kepulauan Riau</li>
                 <li><i class="fas fa-phone-alt"></i> +62 812-3456-7890</li>
                 <li><i class="fas fa-envelope"></i> info@setumudompak.com</li>
-                <li><i class="fas fa-clock"></i> Buka Setiap Hari: 08.00 - 18.00 WIB</li>
+                <li><i class="fas fa-clock"></i> Buka Setiap Hari: 08.00 – 18.00 WIB</li>
             </ul>
         </div>
     </section>
 
+    <!-- GALERI PREVIEW -->
     <section id="galeri" class="galeri bg-light">
         <div class="container text-center">
-            <h2 class="section-title">Galeri Wisata</h2>
+            <h2 class="section-title reveal">Galeri Wisata</h2>
             <div class="divider-center"></div>
-            
             <div class="galeri-row">
-                <img src="https://via.placeholder.com/200x200" alt="Galeri 1">
-                <img src="https://via.placeholder.com/200x200" alt="Galeri 2">
-                <img src="https://via.placeholder.com/200x200" alt="Galeri 3">
-                <img src="https://via.placeholder.com/200x200" alt="Galeri 4">
-                <img src="https://via.placeholder.com/200x200" alt="Galeri 5">
+                <img src="https://via.placeholder.com/200x200/c8ddf5/0F4C81?text=Pantai" alt="Galeri 1">
+                <img src="https://via.placeholder.com/200x200/f5d4a0/0F4C81?text=Sunset" alt="Galeri 2">
+                <img src="https://via.placeholder.com/200x200/c8e8d8/0F4C81?text=Mangrove" alt="Galeri 3">
+                <img src="https://via.placeholder.com/200x200/f5e0c8/0F4C81?text=Kuliner" alt="Galeri 4">
+                <img src="https://via.placeholder.com/200x200/d8c8f0/0F4C81?text=Event" alt="Galeri 5">
             </div>
-            
-            <a href="#" class="btn-primary mt-4">Lihat Lebih Banyak</a>
+            <a href="galeri.html" class="btn-primary mt-4">
+                <i class="fas fa-images"></i> Lihat Semua Foto
+            </a>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer id="kontak">
         <div class="container footer-grid">
             <div class="footer-brand">
@@ -143,8 +154,8 @@
                 <h4>Informasi</h4>
                 <ul>
                     <li><a href="#lokasi">Lokasi Peta</a></li>
-                    <li><a href="#galeri">Galeri Foto</a></li>
-                    <li><a href="#kontak">Kontak</a></li>
+                    <li><a href="galeri.html">Galeri Foto</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </div>
             <div class="footer-social">
@@ -159,5 +170,6 @@
         </div>
     </footer>
 
+    <script src="js/navbar.js"></script>
 </body>
 </html>
