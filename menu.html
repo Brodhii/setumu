@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Makanan — Wisata Setumu Dompak</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">SETUMU DOMPAK</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#tentang">Tentang Kami</a></li>
+            <li><a href="index.html#layanan">Layanan</a></li>
+            <li><a href="index.html#lokasi">Lokasi</a></li>
+            <li><a href="menu.html">Menu Makanan</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="index.html#kontak">Kontak</a></li>
+            <li><a href="#" class="search-icon"><i class="fas fa-search"></i></a></li>
+        </ul>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+        <h2>Menu Kuliner</h2>
+        <div class="divider-center"></div>
+        <p>Nikmati berbagai kuliner khas yang tersedia di kawasan Pantai Setumu.</p>
+    </div>
+
+    <!-- FILTER -->
+    <div class="filter-wrap">
+        <button class="btn-filter active" data-filter="all">Semua</button>
+        <button class="btn-filter" data-filter="seafood">🦐 Seafood</button>
+        <button class="btn-filter" data-filter="tradisional">🍚 Makanan Tradisional</button>
+        <button class="btn-filter" data-filter="minuman">🥤 Minuman</button>
+        <button class="btn-filter" data-filter="cemilan">🍢 Cemilan</button>
+    </div>
+
+    <!-- MENU GRID -->
+    <div class="menu-section">
+        <div class="menu-grid" id="menuGrid">
+
+            <div class="card-menu" data-category="seafood">
+                <div class="card-menu-img-placeholder"><i class="fas fa-fish"></i></div>
+                <div class="card-menu-body">
+                    <h3>Ikan Bakar Bumbu Melayu</h3>
+                    <p>Ikan segar dibakar dengan bumbu rempah khas Kepulauan Riau.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="seafood">
+                <div class="card-menu-img-placeholder"><i class="fas fa-shrimp"></i></div>
+                <div class="card-menu-body">
+                    <h3>Udang Goreng Tepung</h3>
+                    <p>Udang crispy dengan saus sambal manis yang menggugah selera.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="seafood">
+                <div class="card-menu-img-placeholder"><i class="fas fa-fish-fins"></i></div>
+                <div class="card-menu-body">
+                    <h3>Cumi Saus Tiram</h3>
+                    <p>Cumi lembut dimasak dengan saus tiram gurih dan sayuran segar.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="seafood">
+                <div class="card-menu-img-placeholder"><i class="fas fa-fish"></i></div>
+                <div class="card-menu-body">
+                    <h3>Kepiting Rebus</h3>
+                    <p>Kepiting segar direbus dengan bumbu rempah tradisional pilihan.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="seafood">
+                <div class="card-menu-img-placeholder"><i class="fas fa-fish-fins"></i></div>
+                <div class="card-menu-body">
+                    <h3>Kerang Bumbu Pedas</h3>
+                    <p>Kerang segar dimasak dengan bumbu pedas dan rempah pilihan.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="tradisional">
+                <div class="card-menu-img-placeholder"><i class="fas fa-bowl-rice"></i></div>
+                <div class="card-menu-body">
+                    <h3>Nasi Lemak</h3>
+                    <p>Nasi gurih santan dengan lauk sambal, telur, dan ikan bilis.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="tradisional">
+                <div class="card-menu-img-placeholder"><i class="fas fa-utensils"></i></div>
+                <div class="card-menu-body">
+                    <h3>Laksa Melayu</h3>
+                    <p>Mie kuah santan pedas khas Kepulauan Riau yang legendaris.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="tradisional">
+                <div class="card-menu-img-placeholder"><i class="fas fa-utensils"></i></div>
+                <div class="card-menu-body">
+                    <h3>Mie Tarempa</h3>
+                    <p>Mie goreng khas Kepri dengan topping ikan dan bumbu spesial.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="tradisional">
+                <div class="card-menu-img-placeholder"><i class="fas fa-bowl-rice"></i></div>
+                <div class="card-menu-body">
+                    <h3>Gulai Ikan Patin</h3>
+                    <p>Ikan patin dimasak dalam kuah gulai santan kuning kaya rempah.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="tradisional">
+                <div class="card-menu-img-placeholder"><i class="fas fa-utensils"></i></div>
+                <div class="card-menu-body">
+                    <h3>Nasi Goreng Kampung</h3>
+                    <p>Nasi goreng tradisional dengan bumbu rahasia dan lauk pelengkap.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="minuman">
+                <div class="card-menu-img-placeholder"><i class="fas fa-glass-water"></i></div>
+                <div class="card-menu-body">
+                    <h3>Es Kelapa Muda</h3>
+                    <p>Kelapa segar langsung dipetik, menyegarkan di tepi pantai.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="minuman">
+                <div class="card-menu-img-placeholder"><i class="fas fa-blender"></i></div>
+                <div class="card-menu-body">
+                    <h3>Jus Mangga Segar</h3>
+                    <p>Jus buah mangga segar tanpa pengawet, manis alami.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="minuman">
+                <div class="card-menu-img-placeholder"><i class="fas fa-mug-hot"></i></div>
+                <div class="card-menu-body">
+                    <h3>Teh Tarik</h3>
+                    <p>Teh susu khas Melayu yang diseduh dengan teknik tarik tradisional.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="minuman">
+                <div class="card-menu-img-placeholder"><i class="fas fa-glass-water-droplet"></i></div>
+                <div class="card-menu-body">
+                    <h3>Es Cincau Hijau</h3>
+                    <p>Minuman segar dengan cincau hijau alami dan gula aren.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="minuman">
+                <div class="card-menu-img-placeholder"><i class="fas fa-glass-water"></i></div>
+                <div class="card-menu-body">
+                    <h3>Air Tebu Segar</h3>
+                    <p>Air tebu murni yang langsung diperas, kaya mineral alami.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="cemilan">
+                <div class="card-menu-img-placeholder"><i class="fas fa-fire-burner"></i></div>
+                <div class="card-menu-body">
+                    <h3>Otak-Otak Bakar</h3>
+                    <p>Cemilan ikan khas Kepri dibakar dengan daun pisang harum.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="cemilan">
+                <div class="card-menu-img-placeholder"><i class="fas fa-cookie-bite"></i></div>
+                <div class="card-menu-body">
+                    <h3>Kerupuk Belacan</h3>
+                    <p>Kerupuk udang renyah disajikan dengan sambal belacan khas.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="cemilan">
+                <div class="card-menu-img-placeholder"><i class="fas fa-cookie"></i></div>
+                <div class="card-menu-body">
+                    <h3>Pisang Goreng Crispy</h3>
+                    <p>Pisang kepok dibalut tepung crispy, disajikan hangat dengan madu.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="cemilan">
+                <div class="card-menu-img-placeholder"><i class="fas fa-bread-slice"></i></div>
+                <div class="card-menu-body">
+                    <h3>Roti Jala</h3>
+                    <p>Roti jaring khas Melayu disajikan dengan kari ayam gurih.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+            <div class="card-menu" data-category="cemilan">
+                <div class="card-menu-img-placeholder"><i class="fas fa-cookie-bite"></i></div>
+                <div class="card-menu-body">
+                    <h3>Kue Bangkit</h3>
+                    <p>Kue tradisional Melayu berbahan sagu, ringan dan manis.</p>
+                    <a href="#" class="btn-outline"><span>Lihat Detail</span></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>SETUMU DOMPAK</h3>
+                <p>Meningkatkan aksesibilitas informasi pariwisata daerah melalui digitalisasi yang modern dan interaktif.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Tautan Cepat</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.html#tentang">Tentang Kami</a></li>
+                    <li><a href="index.html#layanan">Layanan</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Informasi</h4>
+                <ul>
+                    <li><a href="index.html#lokasi">Lokasi Peta</a></li>
+                    <li><a href="galeri.html">Galeri Foto</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Ikuti Kami</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+    <script>
+        // Filter menu
+        document.querySelectorAll('.btn-filter').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.card-menu').forEach(card => {
+                    const show = filter === 'all' || card.dataset.category === filter;
+                    card.style.display = show ? 'flex' : 'none';
+                    if (show) card.style.animation = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
