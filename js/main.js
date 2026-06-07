@@ -52,16 +52,49 @@ function initializeNavbarEffects() {
             if (href === 'menu.html') {
                 link.classList.add('active');
             }
-        } else if (currentPage === 'galeri.html') {
-            if (href === 'galeri.html') {
-                link.classList.add('active');
-            }
-        } else if (currentPage === 'faq.html') {
-            if (href === 'faq.html') {
-                link.classList.add('active');
-            }
         }
     });
+
+    // Mobile Hamburger Menu Interactivity
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            
+            const icon = navToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            }
+        });
+
+        // Close menu when clicking any nav link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = navToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+                const icon = navToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            }
+        });
+    }
 }
 
 /* ── Reveal on scroll (IntersectionObserver) ── */

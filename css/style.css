@@ -242,9 +242,12 @@ img { display: block; max-width: 100%; }
 
 .mt-4 { margin-top: 40px; }
 
-/* ═══════════════════════════════════════════════════════════
-   1. NAVIGATION
-   ═══════════════════════════════════════════════════════════ */
+#navbar-placeholder {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -256,9 +259,7 @@ img { display: block; max-width: 100%; }
     -webkit-backdrop-filter: blur(18px);
     border-bottom: 1px solid rgba(14, 73, 117, 0.08);
     box-shadow: var(--shadow-sm);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    position: relative;
     transition: var(--transition);
 }
 .navbar.scrolled {
@@ -317,14 +318,21 @@ img { display: block; max-width: 100%; }
 }
 .nav-links a:hover::after { transform: scaleX(1); }
 
-/* Active Navigation Link Highlight */
-.nav-links a.active {
-    color: var(--accent-warna) !important;
-    background: rgba(234, 88, 12, 0.06);
+/* Mobile Toggle Button */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: var(--teks-utama);
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
 }
-.nav-links a.active::after {
-    transform: scaleX(1) !important;
-    background: var(--gradient-accent) !important;
+.nav-toggle:hover {
+    color: var(--accent-warna);
+    background: rgba(15, 76, 129, 0.06);
 }
 
 .search-icon { color: var(--biru-laut) !important; }
