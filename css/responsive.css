@@ -1,0 +1,36 @@
+/* ============================================================
+   SETUMU DOMPAK — Global Responsive Styles
+   ============================================================ */
+
+@media (max-width: 1023px) {
+    .highlights { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .layanan-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+@media (max-width: 767px) {
+    .navbar { padding: 0 5%; }
+    .nav-links { gap: 4px; }
+    .nav-links a { font-size: 0.78rem; padding: 5px 8px; }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 24px 100px;
+        min-height: auto;
+    }
+    .hero-text { padding-right: 0; margin-bottom: 36px; }
+    .hero-text::before { font-size: 0.72rem; }
+    .hero-text h1 { font-size: 2.2rem; }
+    .hero-image-placeholder { height: 280px; width: 100%; }
+
+    .highlights {
+        grid-template-columns: 1fr;
+        margin-top: -40px;
+    }
+    .tentang { flex-direction: column; gap: 36px; }
+    .layanan-grid { grid-template-columns: 1fr; }
+    .lokasi-kontak { flex-direction: column; gap: 32px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    .page-header h2 { font-size: 1.8rem; }
+}

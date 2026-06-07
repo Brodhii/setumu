@@ -5,25 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wisata Setumu Dompak — Ekowisata Kepulauan Riau</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">SETUMU DOMPAK</div>
-        <ul class="nav-links">
-            <li><a href="#beranda">Beranda</a></li>
-            <li><a href="#tentang">Tentang Kami</a></li>
-            <li><a href="#layanan">Layanan</a></li>
-            <li><a href="#lokasi">Lokasi</a></li>
-            <li><a href="menu.html">Menu Makanan</a></li>
-            <li><a href="galeri.html">Galeri</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="#kontak">Kontak</a></li>
-            <li><a href="#" class="search-icon"><i class="fas fa-search"></i></a></li>
-        </ul>
-    </nav>
+    <!-- NAVBAR PLACEHOLDER -->
+    <div id="navbar-placeholder"></div>
 
     <!-- HERO -->
     <section id="beranda" class="hero">
@@ -34,7 +23,9 @@
                 <i class="fas fa-compass"></i> Jelajahi Sekarang
             </a>
         </div>
-        <div class="hero-image-placeholder"></div>
+        <div class="hero-image">
+            <img src="images/hero.png" alt="Pesona Alam Setumu Dompak">
+        </div>
     </section>
 
     <!-- HIGHLIGHT CARDS -->
@@ -61,7 +52,7 @@
             <p>Berawal dari kawasan konservasi, Setumu Dompak kini berkembang menjadi ekowisata unggulan. Kami menggabungkan keindahan panorama laut dengan rimbunnya hutan mangrove untuk memberikan pengalaman wisata yang edukatif dan menenangkan bagi setiap pengunjung.</p>
         </div>
         <div class="tentang-image reveal-right">
-            <img src="https://via.placeholder.com/500x300/a8d0b8/0F4C81?text=Pantai+Setumu" alt="Tentang Wisata Setumu">
+            <img src="images/tentang.png" alt="Tentang Wisata Setumu">
         </div>
     </section>
 
@@ -72,7 +63,7 @@
             <div class="divider-center"></div>
             <div class="layanan-grid">
                 <div class="card-layanan">
-                    <img src="https://via.placeholder.com/400x200/c8ddf5/0F4C81?text=Sewa+Pondok" alt="Sewa Pondok">
+                    <img src="images/pondok.png" alt="Sewa Pondok">
                     <div class="card-body">
                         <h3>Sewa Pondok</h3>
                         <p>Nikmati suasana pantai dengan bersantai di pondok nyaman bersama keluarga.</p>
@@ -80,7 +71,7 @@
                     </div>
                 </div>
                 <div class="card-layanan">
-                    <img src="https://via.placeholder.com/400x200/c8e4d0/0F4C81?text=Spot+Foto" alt="Spot Foto">
+                    <img src="images/spot_foto.png" alt="Spot Foto">
                     <div class="card-body">
                         <h3>Spot Foto Estetik</h3>
                         <p>Abadikan momen tak terlupakan dengan latar belakang alam yang memukau.</p>
@@ -88,7 +79,7 @@
                     </div>
                 </div>
                 <div class="card-layanan">
-                    <img src="https://via.placeholder.com/400x200/f5e4c8/0F4C81?text=Area+Rekreasi" alt="Area Santai">
+                    <img src="images/area_rekreasi.png" alt="Area Santai">
                     <div class="card-body">
                         <h3>Area Rekreasi</h3>
                         <p>Kawasan luas yang cocok untuk kegiatan berkumpul dan bermain santai.</p>
@@ -117,17 +108,172 @@
         </div>
     </section>
 
+    <!-- RATING SECTION -->
+    <section id="rating" class="rating-section">
+        <div class="rating-section-header">
+            <div class="container">
+                <div class="rating-header-inner">
+                    <div class="rating-badge"><i class="fas fa-star"></i></div>
+                    <div>
+                        <h2 class="section-title" style="color:#fff; margin-bottom:6px;">Ulasan Pengunjung</h2>
+                        <p style="color:rgba(255,255,255,0.75); font-size:0.95rem;">Apa kata mereka tentang Setumu Dompak?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container rating-body">
+
+            <!-- ── STATISTIK RATING ── -->
+            <div class="rating-stats-card reveal">
+                <div class="stats-left">
+                    <div class="big-score" id="avgScore">–</div>
+                    <div class="big-stars" id="avgStars">
+                        <i class="far fa-star"></i><i class="far fa-star"></i>
+                        <i class="far fa-star"></i><i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="big-label" id="avgLabel">Memuat...</div>
+                </div>
+                <div class="stats-divider"></div>
+                <div class="stats-bars">
+                    <div class="bar-row">
+                        <span class="bar-num">5</span>
+                        <i class="fas fa-star bar-star"></i>
+                        <div class="bar-track"><div class="bar-fill" id="bar5"></div></div>
+                        <span class="bar-count" id="count5">0</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-num">4</span>
+                        <i class="fas fa-star bar-star"></i>
+                        <div class="bar-track"><div class="bar-fill" id="bar4"></div></div>
+                        <span class="bar-count" id="count4">0</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-num">3</span>
+                        <i class="fas fa-star bar-star"></i>
+                        <div class="bar-track"><div class="bar-fill" id="bar3"></div></div>
+                        <span class="bar-count" id="count3">0</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-num">2</span>
+                        <i class="fas fa-star bar-star"></i>
+                        <div class="bar-track"><div class="bar-fill" id="bar2"></div></div>
+                        <span class="bar-count" id="count2">0</span>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-num">1</span>
+                        <i class="fas fa-star bar-star"></i>
+                        <div class="bar-track"><div class="bar-fill" id="bar1"></div></div>
+                        <span class="bar-count" id="count1">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── DAFTAR ULASAN ── -->
+            <div class="review-section">
+                <h3 class="review-section-title">
+                    <i class="fas fa-comments"></i> Ulasan Terbaru
+                </h3>
+                <div id="reviewList" class="review-list">
+                    <div class="review-skeleton">
+                        <div class="sk-avatar"></div>
+                        <div class="sk-lines"><div class="sk-line w60"></div><div class="sk-line w90"></div><div class="sk-line w80"></div></div>
+                    </div>
+                    <div class="review-skeleton">
+                        <div class="sk-avatar"></div>
+                        <div class="sk-lines"><div class="sk-line w60"></div><div class="sk-line w90"></div><div class="sk-line w80"></div></div>
+                    </div>
+                    <div class="review-skeleton">
+                        <div class="sk-avatar"></div>
+                        <div class="sk-lines"><div class="sk-line w60"></div><div class="sk-line w90"></div><div class="sk-line w80"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── FORM ULASAN ── -->
+            <div class="rating-form-wrap reveal">
+                <div class="form-header">
+                    <div class="form-header-icon"><i class="fas fa-feather-alt"></i></div>
+                    <div>
+                        <h3>Bagikan Pengalamanmu</h3>
+                        <p>Ulasanmu membantu pengunjung lain mengenal Setumu Dompak</p>
+                    </div>
+                </div>
+
+                <form id="ratingForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reviewName">
+                                <i class="fas fa-user"></i> Nama Lengkap
+                                <span class="req">*</span>
+                            </label>
+                            <input type="text" id="reviewName"
+                                   placeholder="Contoh: Budi Santoso"
+                                   maxlength="60" autocomplete="name">
+                            <span class="err-msg" id="errName"></span>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-star"></i> Penilaian <span class="req">*</span></label>
+                            <div class="star-picker-wrap">
+                                <div class="star-picker" id="starPicker">
+                                    <i class="far fa-star star-btn" data-val="1" title="1 – Sangat Buruk"></i>
+                                    <i class="far fa-star star-btn" data-val="2" title="2 – Buruk"></i>
+                                    <i class="far fa-star star-btn" data-val="3" title="3 – Cukup"></i>
+                                    <i class="far fa-star star-btn" data-val="4" title="4 – Bagus"></i>
+                                    <i class="far fa-star star-btn" data-val="5" title="5 – Sangat Bagus"></i>
+                                </div>
+                                <span class="star-label-text" id="starLabel"></span>
+                            </div>
+                            <span class="err-msg" id="errStar"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewKomentar">
+                            <i class="fas fa-comment-dots"></i> Komentar
+                            <span class="req">*</span>
+                        </label>
+                        <textarea id="reviewKomentar" rows="5"
+                                  placeholder="Ceritakan pengalamanmu berkunjung ke Wisata Setumu Dompak... (min. 10 karakter)"
+                                  maxlength="500"></textarea>
+                        <div class="textarea-footer">
+                            <span class="err-msg" id="errKomentar"></span>
+                            <span class="char-count" id="charCount">0 / 500</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit" id="submitRating">
+                            <i class="fas fa-paper-plane"></i> Kirim Ulasan
+                        </button>
+                        <p class="form-note"><i class="fas fa-shield-alt"></i> Data kamu aman & tidak disebarluaskan.</p>
+                    </div>
+
+                    <div class="alert-success" id="submitSuccess">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Ulasan berhasil dikirim!</strong>
+                            <span>Terima kasih telah berbagi pengalaman.</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div><!-- /.rating-body -->
+    </section>
+
     <!-- GALERI PREVIEW -->
     <section id="galeri" class="galeri bg-light">
         <div class="container text-center">
             <h2 class="section-title reveal">Galeri Wisata</h2>
             <div class="divider-center"></div>
             <div class="galeri-row">
-                <img src="https://via.placeholder.com/200x200/c8ddf5/0F4C81?text=Pantai" alt="Galeri 1">
-                <img src="https://via.placeholder.com/200x200/f5d4a0/0F4C81?text=Sunset" alt="Galeri 2">
-                <img src="https://via.placeholder.com/200x200/c8e8d8/0F4C81?text=Mangrove" alt="Galeri 3">
-                <img src="https://via.placeholder.com/200x200/f5e0c8/0F4C81?text=Kuliner" alt="Galeri 4">
-                <img src="https://via.placeholder.com/200x200/d8c8f0/0F4C81?text=Event" alt="Galeri 5">
+                <img src="images/hero.png" alt="Pantai Setumu">
+                <img src="images/spot_foto.png" alt="Sunset Setumu">
+                <img src="images/tentang.png" alt="Mangrove Setumu">
+                <img src="images/pondok.png" alt="Kuliner/Gazebo Setumu">
+                <img src="images/area_rekreasi.png" alt="Area Rekreasi Setumu">
             </div>
             <a href="galeri.html" class="btn-primary mt-4">
                 <i class="fas fa-images"></i> Lihat Semua Foto
@@ -135,41 +281,10 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer id="kontak">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <h3>SETUMU DOMPAK</h3>
-                <p>Meningkatkan aksesibilitas informasi pariwisata daerah melalui digitalisasi yang modern dan interaktif.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Tautan Cepat</h4>
-                <ul>
-                    <li><a href="#beranda">Beranda</a></li>
-                    <li><a href="#tentang">Tentang Kami</a></li>
-                    <li><a href="#layanan">Layanan</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Informasi</h4>
-                <ul>
-                    <li><a href="#lokasi">Lokasi Peta</a></li>
-                    <li><a href="galeri.html">Galeri Foto</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h4>Ikuti Kami</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- FOOTER PLACEHOLDER -->
+    <div id="footer-placeholder"></div>
 
-    <script src="js/navbar.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/validation.js"></script>
 </body>
 </html>

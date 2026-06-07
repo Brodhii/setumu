@@ -1,0 +1,151 @@
+/* ============================================================
+   SETUMU DOMPAK — Gallery Page Specific Styles
+   ============================================================ */
+
+.gallery-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 100px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(135deg, #c8ddf0, #b8d4e8, #a8d0b8);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+.gallery-item:hover {
+    box-shadow: var(--shadow-lg);
+    z-index: 2;
+}
+
+.gallery-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.45s ease;
+}
+.gallery-placeholder i {
+    font-size: 1.6rem;
+    color: rgba(15,76,129,0.3);
+}
+.gallery-item:hover .gallery-placeholder {
+    transform: scale(1.1);
+}
+
+/* Warna berbeda per kategori */
+.gallery-item[data-category="pantai"]    { background: linear-gradient(135deg, #e0f2fe, #7dd3fc); }
+.gallery-item[data-category="sunset"]   { background: linear-gradient(135deg, #ffedd5, #fdba74, #f97316); }
+.gallery-item[data-category="wisatawan"]{ background: linear-gradient(135deg, #d1fae5, #6ee7b7); }
+.gallery-item[data-category="kuliner"]  { background: linear-gradient(135deg, #fef3c7, #fcd34d); }
+.gallery-item[data-category="event"]    { background: linear-gradient(135deg, #f3e8ff, #c084fc); }
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(14, 73, 117, 0.8), rgba(26, 105, 69, 0.6));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+.gallery-overlay i {
+    color: #fff;
+    font-size: 1.7rem;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+    transform: scale(0.7);
+    transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-item:hover .gallery-overlay i { transform: scale(1); }
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10,20,40,0.95);
+    backdrop-filter: blur(12px);
+    z-index: 9999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.lightbox.active { display: flex; }
+
+.lightbox-placeholder {
+    width: 60vw;
+    height: 58vh;
+    max-width: 700px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+}
+.lightbox-placeholder i { font-size: 4rem; color: rgba(255,255,255,0.2); }
+
+.lightbox-close {
+    position: absolute;
+    top: 24px; right: 32px;
+    font-size: 1.8rem;
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    width: 48px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    transition: var(--transition);
+}
+.lightbox-close:hover {
+    background: rgba(46,139,87,0.5);
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+.lightbox-prev, .lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    color: rgba(255,255,255,0.8);
+    cursor: pointer;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    width: 52px; height: 52px;
+    display: flex; align-items: center; justify-content: center;
+    transition: var(--transition);
+}
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+.lightbox-prev:hover, .lightbox-next:hover {
+    background: var(--gradient-hijau);
+    border-color: transparent;
+    box-shadow: 0 4px 16px rgba(46,139,87,0.4);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-caption {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.9rem;
+    margin-top: 20px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: 0.03em;
+}
