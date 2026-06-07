@@ -52,21 +52,6 @@
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Badge kecil di atas judul */
-.hero-text::before {
-    content: '🌊 Ekowisata Kepulauan Riau';
-    display: inline-block;
-    background: linear-gradient(90deg, rgba(15,76,129,0.1), rgba(46,139,87,0.1));
-    color: var(--biru-laut);
-    font-size: 0.8rem;
-    font-weight: 700;
-    padding: 6px 16px;
-    border-radius: 99px;
-    border: 1px solid rgba(15,76,129,0.2);
-    margin-bottom: 20px;
-    letter-spacing: 0.03em;
-}
-
 .hero-text h1 {
     font-size: 3.4rem;
     color: var(--teks-utama);
@@ -383,11 +368,11 @@
 .rating-stats-card {
     display: flex;
     align-items: center;
-    gap: 0;
+    gap: 24px;
     background: var(--putih);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
-    overflow: hidden;
+    padding: 24px;
     margin-bottom: 30px;
     border: 1px solid var(--border-color);
 }
@@ -395,23 +380,25 @@
 .stats-left {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 24px 32px;
     background: var(--gradient-biru);
     min-width: 170px;
+    border-radius: var(--radius-md);
 }
 
 .big-score {
-    font-size: 3.5rem;
-    font-weight: 900;
+    font-size: 3.8rem;
+    font-weight: 800;
     color: #fff;
     line-height: 1;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
 }
 
-.big-stars { margin: 8px 0 4px; }
-.big-stars i { color: #F5A623; font-size: 1rem; }
+.big-stars { margin: 8px 0 4px; display: flex; gap: 4px; align-items: center; justify-content: flex-start; }
+.big-stars svg { display: inline-block; }
 
 .big-label {
     color: rgba(255,255,255,0.75);
@@ -423,12 +410,12 @@
     width: 1px;
     background: var(--border-color);
     align-self: stretch;
-    margin: 16px 0;
+    margin: 8px 0;
 }
 
 .stats-bars {
     flex: 1;
-    padding: 20px 24px;
+    padding: 0;
 }
 
 .bar-row {
@@ -438,8 +425,8 @@
     margin-bottom: 8px;
 }
 
-.bar-num { font-weight: 700; color: var(--teks-utama); font-size: 0.85rem; min-width: 14px; text-align: right; }
-.bar-star { color: #F5A623; font-size: 0.7rem; }
+.bar-num { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; color: var(--teks-utama); font-size: 0.9rem; min-width: 14px; text-align: right; }
+.bar-star { color: #F5A623; fill: currentColor; display: inline-block; vertical-align: middle; }
 
 .bar-track {
     flex: 1;
@@ -460,8 +447,9 @@
 .bar-count {
     min-width: 28px;
     text-align: right;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--teks-body);
 }
 
@@ -519,7 +507,9 @@
 .no-review i { margin-right: 8px; color: #F5A623; }
 
 .review-card {
-    flex: 0 0 290px;
+    flex: 0 0 320px;
+    max-width: 85vw;
+    min-height: 180px;
     scroll-snap-align: start;
     display: flex;
     gap: 14px;
@@ -570,20 +560,31 @@
     box-shadow: 0 4px 10px rgba(19, 20, 56, 0.15);
 }
 
-.review-body { flex: 1; min-width: 0; }
+.review-body {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
 
 .review-header {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 2px;
     margin-bottom: 6px;
+    width: 100%;
 }
 
 .review-header strong {
     color: var(--teks-utama);
     font-size: 0.9rem;
     font-weight: 700;
+    display: block;
+    width: 100%;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 .review-date {
@@ -605,6 +606,27 @@
     margin: 0;
     position: relative;
     z-index: 1;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    max-height: 120px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.review-text::-webkit-scrollbar {
+    width: 4px;
+}
+.review-text::-webkit-scrollbar-track {
+    background: transparent;
+}
+.review-text::-webkit-scrollbar-thumb {
+    background: rgba(26, 34, 56, 0.15);
+    border-radius: 99px;
+}
+.review-text::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-warna);
 }
 
 /* Skeleton loader */

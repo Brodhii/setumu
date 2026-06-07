@@ -8,7 +8,11 @@ const init = () => {
 <nav class="navbar">
     <div class="logo">SETUMU DOMPAK</div>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">
-        <i class="fas fa-bars"></i>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
     </button>
     <ul class="nav-links" id="navLinks">
         <li><a href="index.html#beranda">Beranda</a></li>
@@ -50,10 +54,29 @@ const init = () => {
         <div class="footer-social">
             <h4>Ikuti Kami</h4>
             <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="Facebook">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Tiktok">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Youtube">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                    </svg>
+                </a>
             </div>
         </div>
     </div>
@@ -81,7 +104,7 @@ const init = () => {
                 throw new Error('CORS limitation on file:// protocol');
             }
             const basePath = getBasePath();
-            return fetch(basePath + 'navbar.html');
+            return fetch(basePath + 'navbar.html?v=1.9');
         })
         .then(res => {
             if (!res.ok) throw new Error(`Failed to load navbar.html (HTTP ${res.status})`);
@@ -109,7 +132,7 @@ const init = () => {
                 throw new Error('CORS limitation on file:// protocol');
             }
             const basePath = getBasePath();
-            return fetch(basePath + 'footer.html');
+            return fetch(basePath + 'footer.html?v=1.9');
         })
         .then(res => {
             if (!res.ok) throw new Error(`Failed to load footer.html (HTTP ${res.status})`);
@@ -204,38 +227,48 @@ function initializeNavbarEffects() {
         const navLinks = document.getElementById('navLinks');
         
         if (navToggle && navLinks) {
+            const hamburgerSVG = `
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            `;
+
+            const closeSVG = `
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            `;
+
+            const setMenuState = (isActive) => {
+                if (isActive) {
+                    navLinks.classList.add('active');
+                    navToggle.innerHTML = closeSVG;
+                } else {
+                    navLinks.classList.remove('active');
+                    navToggle.innerHTML = hamburgerSVG;
+                }
+            };
+
             navToggle.addEventListener('click', (e) => {
                 e.stopPropagation();
-                navLinks.classList.toggle('active');
-                
-                const icon = navToggle.querySelector('i');
-                if (icon) {
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
-                }
+                const isActive = !navLinks.classList.contains('active');
+                setMenuState(isActive);
             });
 
             // Close menu when clicking any nav link
             navLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    const icon = navToggle.querySelector('i');
-                    if (icon) {
-                        icon.classList.add('fa-bars');
-                        icon.classList.remove('fa-times');
-                    }
+                    setMenuState(false);
                 });
             });
 
             // Close menu when clicking outside
             document.addEventListener('click', (e) => {
                 if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
-                    navLinks.classList.remove('active');
-                    const icon = navToggle.querySelector('i');
-                    if (icon) {
-                        icon.classList.add('fa-bars');
-                        icon.classList.remove('fa-times');
-                    }
+                    setMenuState(false);
                 }
             });
         }

@@ -7,51 +7,51 @@
 
 /* ─── CSS VARIABLES ─────────────────────────────────────── */
 :root {
-    /* HSL Brand Colors - CRAP Compliant Sunset (Senja) Coastal Theme */
-    --primary-h:       233;
-    --primary-s:       38%;
-    --primary-l:       10%; /* Deeper twilight navy for high contrast readability */
+    /* HSL Brand Colors - Magical Twilight Sunset Theme */
+    --primary-h:       224;
+    --primary-s:       37%;
+    --primary-l:       16%; /* Deep Twilight Blue (#1A2238) */
     
-    --secondary-h:     154;
-    --secondary-s:     57%;
-    --secondary-l:     14%; /* Silhouette mangrove green */
+    --secondary-h:     36;
+    --secondary-s:     100%;
+    --secondary-l:     61%; /* Warm Amber Gold (#FFB037) */
     
-    --accent-h:        10;
-    --accent-s:        95%;
-    --accent-l:        60%; /* Vivid sunset orange/coral */
+    --accent-h:        5;
+    --accent-s:        100%;
+    --accent-l:        68%; /* Vibrant Coral (#FF6A5C) */
     
-    --biru-laut:       hsl(var(--primary-h), var(--primary-s), var(--primary-l)); /* #0F1123 */
-    --biru-tengah:     hsl(var(--primary-h), var(--primary-s), 24%);
-    --biru-muda:       hsl(220, 80%, 55%);
-    --hijau-mangrove:  hsl(var(--secondary-h), var(--secondary-s), var(--secondary-l)); /* #0F3825 */
-    --hijau-terang:    hsl(var(--secondary-h), var(--secondary-s), 28%);
-    --accent-warna:    hsl(var(--accent-h), var(--accent-s), var(--accent-l)); /* #F95738 */
-    --cream-pasir:     #FCF6F0; /* Soft warm sand sandstone */
-    --cream-gelap:     #EEE2D5;
+    --biru-laut:       #1A2238;
+    --biru-tengah:     hsl(var(--primary-h), var(--primary-s), 26%);
+    --biru-muda:       hsl(224, 70%, 50%);
+    --hijau-mangrove:  #FFB037;
+    --hijau-terang:    #FFC875;
+    --accent-warna:    #FF6A5C;
+    --cream-pasir:     #FFF8F2; /* Soft Vanilla Sunset background */
+    --cream-gelap:     #F3E6D9;
     --putih:           #FFFFFF;
-    --abu-terang:      #F3EFF6; /* Dusk twilight breeze background */
-    --abu-gelap:       #0A0B14; /* Slate black */
-    --teks-utama:      #0A0B14; /* Slate black for supreme readability */
-    --teks-body:       #2A2E3D; /* Deep charcoal for legible body text */
+    --abu-terang:      #FFF5EC; /* Very light vanilla sunset contrast bg */
+    --abu-gelap:       #0A0B14;
+    --teks-utama:      #1A2238; /* Deep Twilight Blue for text */
+    --teks-body:       #2F384C; /* Soft slate dark blue */
 
     /* Gradients */
-    --gradient-hero:   linear-gradient(135deg, #131438 0%, #692361 50%, #EA580C 100%); /* Crimson & Purple Twilight Sky */
+    --gradient-hero:   linear-gradient(135deg, #1A2238 0%, #692361 50%, #FF6A5C 100%);
     --gradient-biru:   linear-gradient(135deg, var(--biru-laut), var(--biru-tengah));
     --gradient-hijau:  linear-gradient(135deg, var(--hijau-mangrove), var(--hijau-terang));
-    --gradient-accent: linear-gradient(135deg, var(--accent-warna), hsl(var(--accent-h), 95%, 48%));
-    --gradient-cream:  linear-gradient(165deg, var(--cream-pasir) 0%, #FFFFFF 60%, #EFEBFA 100%);
-    --gradient-card:   linear-gradient(145deg, #ffffff, #f9f7fc);
+    --gradient-accent: linear-gradient(135deg, var(--accent-warna), #FF8074);
+    --gradient-cream:  linear-gradient(165deg, var(--cream-pasir) 0%, #FFFFFF 60%, #FFF5EC 100%);
+    --gradient-card:   linear-gradient(145deg, #ffffff, #FFFBF7);
 
-    /* Fluid Shadows with twilight rose/purple tint to prevent stiffness */
-    --shadow-sm:   0 2px 8px rgba(105, 35, 97, 0.04);
-    --shadow-md:   0 10px 30px -10px rgba(105, 35, 97, 0.1), 0 1px 3px rgba(105, 35, 97, 0.02);
-    --shadow-lg:   0 24px 60px -15px rgba(105, 35, 97, 0.16);
-    --shadow-card: 0 12px 30px -10px rgba(105, 35, 97, 0.06), 0 1px 4px rgba(105, 35, 97, 0.01);
-    --shadow-hover:0 24px 48px -10px rgba(105, 35, 97, 0.18), 0 6px 16px -4px rgba(234, 88, 12, 0.06);
+    /* Fluid Shadows with twilight coral/blue tint */
+    --shadow-sm:   0 2px 8px rgba(26, 34, 56, 0.04);
+    --shadow-md:   0 10px 30px -10px rgba(26, 34, 56, 0.1), 0 1px 3px rgba(26, 34, 56, 0.02);
+    --shadow-lg:   0 24px 60px -15px rgba(26, 34, 56, 0.16);
+    --shadow-card: 0 12px 30px -10px rgba(26, 34, 56, 0.06), 0 1px 4px rgba(26, 34, 56, 0.01);
+    --shadow-hover:0 24px 48px -10px rgba(26, 34, 56, 0.18), 0 6px 16px -4px rgba(255, 106, 92, 0.06);
 
-    /* Tinted borders for color harmony */
-    --border-color:       rgba(105, 35, 97, 0.08);
-    --border-hover-color: rgba(234, 88, 12, 0.2);
+    /* Tinted borders */
+    --border-color:       rgba(26, 34, 56, 0.08);
+    --border-hover-color: rgba(255, 106, 92, 0.2);
 
     --radius-sm:  8px;
     --radius-md:  12px;
@@ -91,7 +91,7 @@ html {
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: var(--teks-body);
-    background-color: var(--putih);
+    background-color: var(--cream-pasir); /* Soft Vanilla Sunset */
     line-height: 1.7;
     overflow-x: hidden;
 }
@@ -182,7 +182,7 @@ img { display: block; max-width: 100%; }
     font-weight: 700;
     font-size: 0.95rem;
     letter-spacing: 0.02em;
-    box-shadow: 0 6px 20px rgba(150, 213, 94, 0.33);
+    box-shadow: 0 6px 20px rgba(255, 106, 92, 0.35);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
@@ -198,11 +198,12 @@ img { display: block; max-width: 100%; }
     transition: opacity 0.3s;
 }
 .btn-primary:hover {
-    background: var(--gradient-biru);
-    box-shadow: 0 8px 28px rgba(10, 18, 32, 0.35);
+    background: var(--gradient-hijau);
+    box-shadow: 0 8px 28px rgba(255, 176, 55, 0.45);
     transform: translateY(-2px);
 }
 .btn-primary:hover::after { opacity: 1; }
+
 
 .btn-outline {
     display: inline-flex;
@@ -408,7 +409,7 @@ img { display: block; max-width: 100%; }
    8. FOOTER
    ═══════════════════════════════════════════════════════════ */
 footer {
-    background: linear-gradient(160deg, #1A2744 0%, #0F3060 50%, #0A2A1E 100%);
+    background: linear-gradient(160deg, #1A2238 0%, #101524 100%);
     color: var(--putih);
     padding: 70px 0 32px;
     position: relative;

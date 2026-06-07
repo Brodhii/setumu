@@ -19,6 +19,14 @@
 
   /* ── Load data dari server ─────────────────────────────────────────────── */
   function loadRating() {
+    if (window.location.protocol === 'file:') {
+      document.getElementById('reviewList').innerHTML =
+        '<p class="no-review" style="color: #856404; background: #fff3cd; padding: 15px; border-radius: 8px; border: 1px solid #ffeeba; text-align: center;">' +
+        '<i class="fas fa-exclamation-triangle"></i> Sistem ulasan tidak dapat dimuat melalui <code>file://</code>.<br>' +
+        'Silakan buka lewat server lokal di alamat: <a href="http://localhost/setumu-php/" target="_blank" style="text-decoration: underline; font-weight: bold; color: #1a2238;">http://localhost/setumu-php/</a>' +
+        '</p>';
+      return;
+    }
     fetch(API)
       .then(function (r) { return r.json(); })
       .then(function (data) {
@@ -49,14 +57,45 @@
     });
   }
 
+  /* ── SVG Star Helpers ─────────────────────────────────────────────────── */
+  function getSolidStarSVG(w, h, cls) {
+    w = w || 16; h = h || 16; cls = cls || '';
+    return '<svg class="star-icon ' + cls + '" viewBox="0 0 24 24" width="' + w + '" height="' + h + '" style="display: inline-block; vertical-align: middle;">' +
+      '<path fill="#F5A623" d="M12 17.27 L18.18 21 L16.54 13.97 L22 9.24 L14.81 8.63 L12 2 L9.19 8.63 L2 9.24 L7.46 13.97 L5.82 21 Z"/>' +
+      '</svg>';
+  }
+
+  function getEmptyStarSVG(w, h, cls) {
+    w = w || 16; h = h || 16; cls = cls || '';
+    return '<svg class="star-icon star-empty ' + cls + '" viewBox="0 0 24 24" width="' + w + '" height="' + h + '" style="display: inline-block; vertical-align: middle;">' +
+      '<path fill="#d4dbe7" d="M12 17.27 L18.18 21 L16.54 13.97 L22 9.24 L14.81 8.63 L12 2 L9.19 8.63 L2 9.24 L7.46 13.97 L5.82 21 Z"/>' +
+      '</svg>';
+  }
+
+  function getHalfStarSVG(w, h, cls) {
+    w = w || 16; h = h || 16; cls = cls || '';
+    var gradId = 'halfStarGrad-' + Math.random().toString(36).substr(2, 9);
+    return '<svg class="star-icon ' + cls + '" viewBox="0 0 24 24" width="' + w + '" height="' + h + '" style="display: inline-block; vertical-align: middle;">' +
+      '<defs>' +
+        '<linearGradient id="' + gradId + '">' +
+          '<stop offset="50%" stop-color="#F5A623"/>' +
+          '<stop offset="50%" stop-color="#d4dbe7"/>' +
+        '</linearGradient>' +
+      '</defs>' +
+      '<path fill="url(#' + gradId + ')" d="M12 17.27 L18.18 21 L16.54 13.97 L22 9.24 L14.81 8.63 L12 2 L9.19 8.63 L2 9.24 L7.46 13.97 L5.82 21 Z"/>' +
+      '</svg>';
+  }
+
   function renderStarEl(container, value) {
     container.innerHTML = '';
     for (var i = 1; i <= 5; i++) {
-      var ic = document.createElement('i');
-      ic.className = i <= Math.floor(value) ? 'fas fa-star'
-                   : (i - value < 1 && value % 1 >= 0.5) ? 'fas fa-star-half-alt'
-                   : 'far fa-star';
-      container.appendChild(ic);
+      if (i <= Math.floor(value)) {
+        container.innerHTML += getSolidStarSVG(18, 18);
+      } else if (i - value < 1 && value % 1 >= 0.5) {
+        container.innerHTML += getHalfStarSVG(18, 18);
+      } else {
+        container.innerHTML += getEmptyStarSVG(18, 18);
+      }
     }
   }
 
@@ -85,7 +124,7 @@
   function starsHTML(val) {
     var h = '';
     for (var i = 1; i <= 5; i++) {
-      h += '<i class="' + (i <= val ? 'fas' : 'far') + ' fa-star"></i>';
+      h += i <= val ? getSolidStarSVG(14, 14) : getEmptyStarSVG(14, 14);
     }
     return h;
   }
@@ -112,7 +151,11 @@
 
   function highlightStars(stars, val) {
     stars.forEach(function (s, i) {
-      s.className = 'star-btn ' + (i < val ? 'fas fa-star active' : 'far fa-star');
+      if (i < val) {
+        s.classList.add('active');
+      } else {
+        s.classList.remove('active');
+      }
     });
   }
 
@@ -194,7 +237,7 @@
     document.getElementById('starLabel').textContent = '';
     selectedStar = 0;
     document.querySelectorAll('#starPicker .star-btn').forEach(function (s) {
-      s.className = 'star-btn far fa-star';
+      s.classList.remove('active');
     });
     clearAllErr();
   }
