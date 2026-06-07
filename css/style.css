@@ -312,11 +312,13 @@ img { display: block; max-width: 100%; }
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--biru-laut);
     background: rgba(15,76,129,0.06);
 }
-.nav-links a:hover::after { transform: scaleX(1); }
+.nav-links a:hover::after,
+.nav-links a.active::after { transform: scaleX(1); }
 
 /* Mobile Toggle Button */
 .nav-toggle {
