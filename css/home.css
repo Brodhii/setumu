@@ -54,18 +54,14 @@
 
 .hero-text h1 {
     font-size: 3.4rem;
-    color: var(--teks-utama);
+    color: var(--biru-laut);
     margin-bottom: 20px;
     line-height: 1.18;
-    background: linear-gradient(135deg, #0D3F6E, #1565A8, #0F6B3F);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 .hero-text p {
     font-size: 1.1rem;
     color: var(--teks-body);
-    margin-bottom: 36px;
+    margin-bottom: 24px;
     max-width: 480px;
     line-height: 1.8;
 }
@@ -79,7 +75,6 @@
     box-shadow: var(--shadow-lg);
     animation: heroImgIn 1s 0.2s ease both;
     border: 8px solid var(--putih);
-    transform: rotate(1deg);
     transition: var(--transition);
 }
 .hero-image:hover {
@@ -496,7 +491,7 @@
 
 .no-review {
     text-align: center;
-    color: #9aa5b4;
+    color: #718096;
     padding: 36px 20px;
     background: var(--putih);
     border-radius: var(--radius-md);
@@ -750,7 +745,7 @@
 
 .char-count {
     font-size: 0.78rem;
-    color: #9aa5b4;
+    color: #718096;
     flex-shrink: 0;
 }
 
@@ -803,7 +798,7 @@
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
-    margin-top: 4px;
+    margin-top: 24px;
 }
 
 .btn-submit {
@@ -832,7 +827,7 @@
 
 .form-note {
     font-size: 0.8rem;
-    color: #9aa5b4;
+    color: #718096;
     display: flex;
     align-items: center;
     gap: 6px;

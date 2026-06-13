@@ -109,6 +109,17 @@ a {
 
 img { display: block; max-width: 100%; }
 
+/* ─── INLINE SVG ICON BASE ───────────────────────────────── */
+.icon-svg {
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
 /* ─── SCROLL ANIMATION ───────────────────────────────────── */
 .reveal {
     opacity: 0;
@@ -437,7 +448,7 @@ footer::after {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
     gap: 44px;
     padding: 0 24px;
     position: relative;
