@@ -22,7 +22,7 @@
     if (window.location.protocol === 'file:') {
       document.getElementById('reviewList').innerHTML =
         '<p class="no-review" style="color: #856404; background: #fff3cd; padding: 15px; border-radius: 8px; border: 1px solid #ffeeba; text-align: center;">' +
-        '<i class="fas fa-exclamation-triangle"></i> Sistem ulasan tidak dapat dimuat melalui <code>file://</code>.<br>' +
+        '<svg class="icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:6px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Sistem ulasan tidak dapat dimuat melalui <code>file://</code>.<br>' +
         'Silakan buka lewat server lokal di alamat: <a href="http://localhost/setumu-php/" target="_blank" style="text-decoration: underline; font-weight: bold; color: #1a2238;">http://localhost/setumu-php/</a>' +
         '</p>';
       return;
@@ -37,7 +37,7 @@
       })
       .catch(function () {
         document.getElementById('reviewList').innerHTML =
-          '<p class="no-review"><i class="fas fa-exclamation-circle"></i> Gagal memuat ulasan. Pastikan server PHP aktif.</p>';
+          '<p class="no-review"><svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Gagal memuat ulasan. Pastikan server PHP aktif.</p>';
       });
   }
 
@@ -112,7 +112,7 @@
         '<div class="review-body">' +
           '<div class="review-header">' +
             '<strong>' + esc(r.nama) + '</strong>' +
-            '<span class="review-date"><i class="far fa-calendar-alt"></i> ' + r.tanggal_formatted + '</span>' +
+            '<span class="review-date"><svg class="icon-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> ' + r.tanggal_formatted + '</span>' +
           '</div>' +
           '<div class="review-stars">' + starsHTML(r.bintang) + ' <span class="star-label">' + labelBintang(r.bintang) + '</span></div>' +
           '<p class="review-text">' + esc(r.komentar) + '</p>' +
@@ -166,7 +166,7 @@
     ta.addEventListener('input', function () {
       var len = ta.value.length;
       cc.textContent = len + ' / 500';
-      cc.style.color = len > 450 ? '#e53e3e' : '#9aa5b4';
+      cc.style.color = len > 450 ? '#e53e3e' : '#718096';
     });
   }
 
@@ -196,7 +196,7 @@
       // kirim ke API
       var btn = document.getElementById('submitRating');
       btn.disabled = true;
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+      btn.innerHTML = '<svg class="icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;animation:spin 1s linear infinite;"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Mengirim...';
 
       fetch(API, {
         method: 'POST',
@@ -206,7 +206,7 @@
         .then(function (r) { return r.json(); })
         .then(function (data) {
           btn.disabled = false;
-          btn.innerHTML = '<i class="fas fa-paper-plane"></i> Kirim Ulasan';
+          btn.innerHTML = '<svg class="icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Kirim Ulasan';
 
           if (data.success) {
             resetForm();
@@ -223,7 +223,7 @@
         })
         .catch(function () {
           btn.disabled = false;
-          btn.innerHTML = '<i class="fas fa-paper-plane"></i> Kirim Ulasan';
+          btn.innerHTML = '<svg class="icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Kirim Ulasan';
           alert('Gagal terhubung ke server. Pastikan PHP aktif.');
         });
     });

@@ -41,6 +41,14 @@ $pdo->exec("
     )
 ");
 
+// Tabel untuk rate limiting berbasis IP
+$pdo->exec("
+    CREATE TABLE IF NOT EXISTS rate_limits (
+        ip         TEXT PRIMARY KEY,
+        last_submit TEXT NOT NULL
+    )
+");
+
 // ── Router ────────────────────────────────────────────────────────────────────
 $method = $_SERVER['REQUEST_METHOD'];
 
@@ -91,6 +99,27 @@ function handleGet(PDO $pdo): void
 // ── POST: Simpan ulasan baru ──────────────────────────────────────────────────
 function handlePost(PDO $pdo): void
 {
+    // ── Rate Limiting: 1 ulasan per IP setiap 5 menit ────────────────────────
+    $cooldown = 300; // detik (5 menit)
+    $ip = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+
+    $stmtRL = $pdo->prepare("SELECT last_submit FROM rate_limits WHERE ip = ?");
+    $stmtRL->execute([$ip]);
+    $lastSubmit = $stmtRL->fetchColumn();
+
+    if ($lastSubmit !== false) {
+        $elapsed = time() - strtotime($lastSubmit);
+        if ($elapsed < $cooldown) {
+            $sisa = ceil(($cooldown - $elapsed) / 60);
+            http_response_code(429);
+            echo json_encode([
+                'success' => false,
+                'message' => "Terlalu cepat. Silakan coba lagi dalam {$sisa} menit.",
+            ]);
+            return;
+        }
+    }
+
     // Baca JSON body
     $body = json_decode(file_get_contents('php://input'), true);
 
@@ -135,6 +164,12 @@ function handlePost(PDO $pdo): void
         "INSERT INTO reviews (nama, bintang, komentar, tanggal) VALUES (?, ?, ?, ?)"
     );
     $stmt->execute([$nama, $bintang, $komentar, $tanggal]);
+
+    // ── Catat timestamp rate limit untuk IP ini ───────────────────────────────
+    $stmtUpsert = $pdo->prepare(
+        "INSERT OR REPLACE INTO rate_limits (ip, last_submit) VALUES (?, ?)"
+    );
+    $stmtUpsert->execute([$ip, $tanggal]);
 
     echo json_encode([
         'success' => true,
