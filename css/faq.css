@@ -36,12 +36,10 @@
     justify-content: center;
     box-shadow: var(--shadow-sm);
 }
-.faq-hero-illustration .bubble-main i {
-    font-size: 2rem;
-    background: var(--gradient-biru);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.faq-hero-illustration .bubble-main .icon-svg {
+    width: 32px;
+    height: 32px;
+    color: var(--biru-laut);
 }
 .faq-hero-illustration .bubble-small {
     position: absolute;
@@ -55,8 +53,9 @@
     justify-content: center;
     box-shadow: var(--shadow-sm);
 }
-.faq-hero-illustration .bubble-small i {
-    font-size: 1.1rem;
+.faq-hero-illustration .bubble-small .icon-svg {
+    width: 18px;
+    height: 18px;
     color: var(--hijau-mangrove);
 }
 .faq-hero-illustration .bubble-dots {
@@ -100,18 +99,21 @@
 .faq-search-wrap {
     flex: 1;
     position: relative;
+    display: flex;
+    align-items: center;
 }
-.faq-search-wrap i {
+/* Ikon pencarian (SVG) di dalam wrapper */
+.faq-search-wrap > .icon-svg {
     position: absolute;
-    left: 20px;
+    left: 18px;
     top: 50%;
     transform: translateY(-50%);
     color: var(--biru-muda);
-    font-size: 1rem;
+    pointer-events: none;
 }
 .faq-search {
     width: 100%;
-    padding: 14px 20px 14px 50px;
+    padding: 12px 16px 12px 48px;
     border: 2px solid rgba(14, 73, 117, 0.12);
     border-radius: 99px;
     font-size: 0.95rem;
@@ -119,19 +121,20 @@
     background: var(--putih);
     box-shadow: var(--shadow-sm);
     outline: none;
-    transition: var(--transition);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     color: var(--teks-utama);
 }
 .faq-search::placeholder { color: #94a3b8; }
 .faq-search:focus {
     border-color: var(--biru-laut);
-    box-shadow: 0 0 0 4px rgba(14, 73, 117, 0.12);
+    box-shadow: 0 0 0 4px rgba(14, 73, 117, 0.10),
+                0 2px 8px rgba(14, 73, 117, 0.08);
 }
 .faq-search-btn {
     background: var(--gradient-accent);
     color: #fff;
     border: none;
-    padding: 13px 28px;
+    padding: 12px 28px;
     border-radius: 99px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 700;
@@ -252,7 +255,19 @@
     .faq-hero-text h2 { font-size: 1.6rem; }
     .faq-search-section { padding: 0 20px 8px; }
     .faq-list { padding: 24px 20px 60px; }
-    .faq-search-row { flex-direction: column; align-items: stretch; }
-    .faq-search-btn { text-align: center; }
+    .faq-search-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .faq-search {
+        padding: 12px 16px 12px 44px;
+    }
+    .faq-search-wrap > .icon-svg {
+        left: 14px;
+    }
+    .faq-search-btn {
+        text-align: center;
+        padding: 12px 20px;
+    }
 }
 

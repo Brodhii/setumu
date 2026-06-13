@@ -147,9 +147,7 @@
     line-height: 1.6;
 }
 /* Icon emoji sebelum judul */
-.card-highlight:nth-child(1) h3::before { content: '🗓 '; }
-.card-highlight:nth-child(2) h3::before { content: '🏕 '; }
-.card-highlight:nth-child(3) h3::before { content: '🛣 '; }
+
 
 /* ═══════════════════════════════════════════════════════════
    4. TENTANG KAMI
