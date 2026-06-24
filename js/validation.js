@@ -9,7 +9,7 @@
   const API  = 'api/rating.php';
   let selectedStar = 0;
 
-  /* ── Init ──────────────────────────────────────────────────────────────── */
+  /* ── Inisialisasi ──────────────────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
     initStarPicker();
     initForm();
@@ -57,7 +57,7 @@
     });
   }
 
-  /* ── SVG Star Helpers ─────────────────────────────────────────────────── */
+  /* ── Pembantu Bintang SVG ──────────────────────────────────────────────── */
   function getSolidStarSVG(w, h, cls) {
     w = w || 16; h = h || 16; cls = cls || '';
     return '<svg class="star-icon ' + cls + '" viewBox="0 0 24 24" width="' + w + '" height="' + h + '" style="display: inline-block; vertical-align: middle;">' +
@@ -133,7 +133,7 @@
     return ['', 'Sangat Buruk', 'Buruk', 'Cukup', 'Bagus', 'Sangat Bagus'][n] || '';
   }
 
-  /* ── Star picker ───────────────────────────────────────────────────────── */
+  /* ── Pemilih Bintang ───────────────────────────────────────────────────── */
   function initStarPicker() {
     var stars = document.querySelectorAll('#starPicker .star-btn');
     stars.forEach(function (star) {
@@ -159,7 +159,7 @@
     });
   }
 
-  /* ── Char count ────────────────────────────────────────────────────────── */
+  /* ── Penghitung Karakter ───────────────────────────────────────────────── */
   function initCharCount() {
     var ta = document.getElementById('reviewKomentar');
     var cc = document.getElementById('charCount');
@@ -170,7 +170,7 @@
     });
   }
 
-  /* ── Form submit ───────────────────────────────────────────────────────── */
+  /* ── Pengiriman Formulir ───────────────────────────────────────────────── */
   function initForm() {
     document.getElementById('ratingForm').addEventListener('submit', function (e) {
       e.preventDefault();
@@ -229,7 +229,7 @@
     });
   }
 
-  /* ── Helpers ───────────────────────────────────────────────────────────── */
+  /* ── Fungsi Pembantu ───────────────────────────────────────────────────── */
   function resetForm() {
     document.getElementById('reviewName').value = '';
     document.getElementById('reviewKomentar').value = '';

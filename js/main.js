@@ -1,6 +1,6 @@
 /* ============================================================
    SETUMU DOMPAK — Main JS
-   Component Loader + Scroll Effects + Animations
+   Pemuat Komponen + Efek Gulir + Animasi
    ============================================================ */
 
 const init = () => {
@@ -20,7 +20,7 @@ const init = () => {
         <li><a href="index.html#layanan">Layanan</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="index.html#lokasi">Lokasi</a></li>
-        <li><a href="index.html#galeri">Galeri</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="index.html#kontak">Kontak</a></li>
     </ul>
@@ -83,7 +83,7 @@ const init = () => {
 </footer>
     `;
 
-    // Determine the base path dynamically to handle hosting in subdirectories
+    // Tentukan base path secara dinamis untuk menangani hosting di subdirektori
     const getBasePath = () => {
         const path = window.location.pathname;
         const segments = path.split('/');
@@ -97,7 +97,7 @@ const init = () => {
         return basePath;
     };
 
-    // ── Load Components ──
+    // ── Muat Komponen ──
     const loadNavbar = Promise.resolve()
         .then(() => {
             if (window.location.protocol === 'file:') {
@@ -152,11 +152,11 @@ const init = () => {
             }
         });
 
-    // Wait for components to load before handling layout adjustments and animations
+    // Tunggu komponen dimuat sebelum menangani penyesuaian tata letak dan animasi
     Promise.all([loadNavbar, loadFooter]).then(() => {
         initializeScrollObserver();
         
-        // Handle scrolling to hash after dynamic content is fully loaded
+        // Tangani pengguliran ke hash setelah konten dinamis dimuat sepenuhnya
         if (window.location.hash) {
             try {
                 const target = document.querySelector(window.location.hash);
@@ -178,7 +178,7 @@ if (document.readyState === 'loading') {
     init();
 }
 
-/* ── Navbar scroll shadow & active state highlighting ── */
+/* ── Bayangan gulir navbar & penyorotan status aktif ── */
 function initializeNavbarEffects() {
     try {
         const navbar = document.querySelector('.navbar');
@@ -192,7 +192,7 @@ function initializeNavbarEffects() {
     }
 
     try {
-        // Active page highlighting
+        // Penyorotan halaman aktif
         const currentPage = location.pathname.split('/').pop() || 'index.html';
         
         const highlightActiveLink = () => {
@@ -222,7 +222,7 @@ function initializeNavbarEffects() {
     }
 
     try {
-        // Mobile Hamburger Menu Interactivity
+        // Interaktivitas Menu Hamburger Seluler
         const navToggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
         
@@ -258,14 +258,14 @@ function initializeNavbarEffects() {
                 setMenuState(isActive);
             });
 
-            // Close menu when clicking any nav link
+            // Tutup menu saat mengklik tautan navigasi apa pun
             navLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     setMenuState(false);
                 });
             });
 
-            // Close menu when clicking outside
+            // Tutup menu saat mengklik di luar
             document.addEventListener('click', (e) => {
                 if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
                     setMenuState(false);
@@ -278,7 +278,7 @@ function initializeNavbarEffects() {
 }
 
 
-/* ── Reveal on scroll (IntersectionObserver) ── */
+/* ── Tampilkan saat digulir (IntersectionObserver) ── */
 function initializeScrollObserver() {
     const revealEls = document.querySelectorAll(
         '.reveal, .reveal-left, .reveal-right, ' +
@@ -296,7 +296,7 @@ function initializeScrollObserver() {
         }, { threshold: 0.12 });
 
         revealEls.forEach((el, i) => {
-            /* Stagger per grid-item */
+            /* Penundaan bertahap per item grid */
             el.style.transitionDelay = (i % 8) * 0.07 + 's';
             io.observe(el);
         });

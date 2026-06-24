@@ -217,6 +217,8 @@
     box-shadow: var(--shadow-card);
     transition: var(--transition);
     border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
 }
 .card-layanan:hover {
     transform: translateY(-8px);
@@ -236,7 +238,12 @@
     transform: scale(1.04);
 }
 
-.card-body { padding: 26px; }
+.card-body {
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
 .card-body h3 {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 700;
@@ -247,8 +254,32 @@
 .card-body p {
     font-size: 0.92rem;
     color: var(--teks-body);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     line-height: 1.7;
+}
+.card-body .btn-outline {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.price-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 76, 129, 0.05);
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.82rem;
+    border: 1px dashed rgba(15, 76, 129, 0.25);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.price-info span {
+    color: var(--teks-body);
+}
+.price-info strong {
+    color: var(--accent-warna);
+    font-weight: 700;
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -327,39 +358,30 @@
    ═══════════════════════════════════════════════════════════════ */
 .rating-section { background: var(--abu-terang); }
 
-.rating-section-header {
-    background: var(--gradient-hero);
-    padding: 52px 0 36px;
-    position: relative;
-    overflow: hidden;
+/* Header Minimalis Terpadu */
+.rating-intro-header {
+    text-align: center;
+    margin-bottom: 40px;
 }
-
-.rating-section-header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+.rating-intro-header h2 {
+    font-size: 2.2rem;
+    color: var(--teks-utama);
+    margin-top: 8px;
+    margin-bottom: 0;
 }
-
-.rating-header-inner {
-    display: flex;
+.rating-tag {
+    display: inline-flex;
     align-items: center;
-    gap: 20px;
-    position: relative;
-}
-
-.rating-badge {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    border: 2px solid rgba(255,255,255,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: #F5A623;
-    flex-shrink: 0;
+    gap: 8px;
+    background: rgba(26, 34, 56, 0.05);
+    color: var(--biru-laut);
+    padding: 6px 18px;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .rating-body { padding: 48px 0 72px; }
@@ -774,7 +796,7 @@
 .star-picker { display: flex; gap: 6px; }
 
 .star-picker .star-btn {
-    font-size: 2rem;
+    display: inline-flex;
     color: #d4dbe7;
     cursor: pointer;
     transition: color 0.15s, transform 0.15s;
@@ -784,6 +806,13 @@
 .star-picker .star-btn:hover { transform: scale(1.25); }
 .star-picker .star-btn.active,
 .star-picker .star-btn:hover { color: #F5A623; }
+
+.star-picker .star-btn svg {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+    display: block;
+}
 
 .star-label-text {
     font-size: 0.85rem;

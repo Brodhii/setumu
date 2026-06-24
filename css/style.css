@@ -5,20 +5,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
-/* ─── CSS VARIABLES ─────────────────────────────────────── */
+/* ─── VARIABEL CSS ──────────────────────────────────────── */
 :root {
-    /* HSL Brand Colors - Magical Twilight Sunset Theme */
+    /* Warna Brand HSL - Tema Twilight Sunset Ajaib */
     --primary-h:       224;
     --primary-s:       37%;
-    --primary-l:       16%; /* Deep Twilight Blue (#1A2238) */
+    --primary-l:       16%; /* Biru Senja Tua (#1A2238) */
     
     --secondary-h:     36;
     --secondary-s:     100%;
-    --secondary-l:     61%; /* Warm Amber Gold (#FFB037) */
+    --secondary-l:     61%; /* Emas Amber Hangat (#FFB037) */
     
     --accent-h:        5;
     --accent-s:        100%;
-    --accent-l:        68%; /* Vibrant Coral (#FF6A5C) */
+    --accent-l:        68%; /* Karang Cerah (#FF6A5C) */
     
     --biru-laut:       #1A2238;
     --biru-tengah:     hsl(var(--primary-h), var(--primary-s), 26%);
@@ -26,15 +26,15 @@
     --hijau-mangrove:  #FFB037;
     --hijau-terang:    #FFC875;
     --accent-warna:    #FF6A5C;
-    --cream-pasir:     #FFF8F2; /* Soft Vanilla Sunset background */
+    --cream-pasir:     #FFF8F2; /* Latar Belakang Vanilla Sunset Lembut */
     --cream-gelap:     #F3E6D9;
     --putih:           #FFFFFF;
-    --abu-terang:      #FFF5EC; /* Very light vanilla sunset contrast bg */
+    --abu-terang:      #FFF5EC; /* Latar Belakang Kontras Vanilla Sunset Sangat Terang */
     --abu-gelap:       #0A0B14;
-    --teks-utama:      #1A2238; /* Deep Twilight Blue for text */
-    --teks-body:       #2F384C; /* Soft slate dark blue */
+    --teks-utama:      #1A2238; /* Biru Senja Tua Untuk Teks */
+    --teks-body:       #2F384C; /* Biru Gelap Slate Lembut */
 
-    /* Gradients */
+    /* Gradasi */
     --gradient-hero:   linear-gradient(135deg, #1A2238 0%, #692361 50%, #FF6A5C 100%);
     --gradient-biru:   linear-gradient(135deg, var(--biru-laut), var(--biru-tengah));
     --gradient-hijau:  linear-gradient(135deg, var(--hijau-mangrove), var(--hijau-terang));
@@ -42,14 +42,14 @@
     --gradient-cream:  linear-gradient(165deg, var(--cream-pasir) 0%, #FFFFFF 60%, #FFF5EC 100%);
     --gradient-card:   linear-gradient(145deg, #ffffff, #FFFBF7);
 
-    /* Fluid Shadows with twilight coral/blue tint */
+    /* Bayangan Fluida Dengan Rona Karang/Biru Senja */
     --shadow-sm:   0 2px 8px rgba(26, 34, 56, 0.04);
     --shadow-md:   0 10px 30px -10px rgba(26, 34, 56, 0.1), 0 1px 3px rgba(26, 34, 56, 0.02);
     --shadow-lg:   0 24px 60px -15px rgba(26, 34, 56, 0.16);
     --shadow-card: 0 12px 30px -10px rgba(26, 34, 56, 0.06), 0 1px 4px rgba(26, 34, 56, 0.01);
     --shadow-hover:0 24px 48px -10px rgba(26, 34, 56, 0.18), 0 6px 16px -4px rgba(255, 106, 92, 0.06);
 
-    /* Tinted borders */
+    /* Batasan Berwarna */
     --border-color:       rgba(26, 34, 56, 0.08);
     --border-hover-color: rgba(255, 106, 92, 0.2);
 
@@ -61,7 +61,7 @@
     --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ─── RESET & BASE ───────────────────────────────────────── */
+/* ─── RESET & UTAMA ─────────────────────────────────────── */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -72,7 +72,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Custom Scrollbar */
+/* Batang Gulir Kustom */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -109,7 +109,7 @@ a {
 
 img { display: block; max-width: 100%; }
 
-/* ─── SCROLL ANIMATION ───────────────────────────────────── */
+/* ─── ANIMASI GULIR ──────────────────────────────────────── */
 .reveal {
     opacity: 0;
     transform: translateY(32px);
@@ -138,7 +138,7 @@ img { display: block; max-width: 100%; }
     transform: translateX(0);
 }
 
-/* ─── LAYOUT ─────────────────────────────────────────────── */
+/* ─── TATA LETAK ─────────────────────────────────────────── */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -147,7 +147,7 @@ img { display: block; max-width: 100%; }
 
 .bg-light { background-color: var(--abu-terang); }
 
-/* ─── DIVIDER ────────────────────────────────────────────── */
+/* ─── PEMBATAS ───────────────────────────────────────────── */
 .divider {
     height: 4px;
     width: 56px;
@@ -163,14 +163,14 @@ img { display: block; max-width: 100%; }
     margin: 14px auto 36px;
 }
 
-/* ─── SECTION TITLE ─────────────────────────────────────── */
+/* ─── JUDUL BAGIAN ──────────────────────────────────────── */
 .section-title {
     text-align: center;
     font-size: 2.2rem;
     color: var(--teks-utama);
 }
 
-/* ─── BUTTONS ────────────────────────────────────────────── */
+/* ─── TOMBOL-TOMBOL ──────────────────────────────────────── */
 .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -321,7 +321,7 @@ img { display: block; max-width: 100%; }
 .nav-links a:hover::after,
 .nav-links a.active::after { transform: scaleX(1); }
 
-/* Mobile Toggle Button */
+/* Tombol Toggle Seluler */
 .nav-toggle {
     display: none;
     background: none;
@@ -341,7 +341,7 @@ img { display: block; max-width: 100%; }
 .search-icon { color: var(--biru-laut) !important; }
 
 /* ═══════════════════════════════════════════════════════════
-   PAGE HEADER (Menu, Galeri, FAQ)
+   HEADER HALAMAN (Menu, Galeri, FAQ)
    ═══════════════════════════════════════════════════════════ */
 .page-header {
     text-align: center;
@@ -365,7 +365,7 @@ img { display: block; max-width: 100%; }
 }
 
 /* ═══════════════════════════════════════════════════════════
-   FILTER TABS (Menu & Galeri)
+   TAB FILTER (Menu & Galeri)
    ═══════════════════════════════════════════════════════════ */
 .filter-wrap {
     display: flex;

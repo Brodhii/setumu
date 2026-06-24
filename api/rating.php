@@ -34,10 +34,10 @@ try {
 $pdo->exec("
     CREATE TABLE IF NOT EXISTS reviews (
         id       INTEGER PRIMARY KEY AUTOINCREMENT,
-        nama     TEXT    NOT NULL,
+        nama     VARCHAR(60) NOT NULL,
         bintang  INTEGER NOT NULL CHECK(bintang BETWEEN 1 AND 5),
         komentar TEXT    NOT NULL,
-        tanggal  TEXT    NOT NULL
+        tanggal  DATETIME NOT NULL
     )
 ");
 

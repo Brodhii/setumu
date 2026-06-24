@@ -1,5 +1,5 @@
 /* ============================================================
-   SETUMU DOMPAK — Menu Page Specific Styles
+   SETUMU DOMPAK — Gaya Khusus Halaman Menu
    ============================================================ */
 
 .menu-section {
@@ -78,19 +78,37 @@
     background: linear-gradient(135deg, #ffedd5, #fed7aa, #fdba74);
 }
 
+
 .card-menu-body {
     padding: 16px 18px 20px;
     flex: 1;
     display: flex;
     flex-direction: column;
 }
-.card-menu-body h3 {
+.card-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.card-menu-header h3 {
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 700;
     font-size: 0.92rem;
     color: var(--biru-laut);
-    margin-bottom: 6px;
     line-height: 1.4;
+    margin-bottom: 0;
+}
+.card-menu-price {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent-warna);
+    white-space: nowrap;
+    background: rgba(255, 106, 92, 0.08);
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .card-menu-body p {
     font-size: 0.8rem;
@@ -98,10 +116,6 @@
     line-height: 1.55;
     margin-bottom: 12px;
     flex: 1;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 .card-menu-body .btn-outline {
     font-size: 0.75rem;
@@ -109,3 +123,30 @@
     align-self: flex-start;
     border-radius: 99px;
 }
+
+/* Gaya Gambar Kartu Menu */
+.card-menu-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    position: relative;
+    background: #e0f2fe;
+}
+.card-menu-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-menu:hover .card-menu-img img {
+    transform: scale(1.06);
+}
+.card-menu-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 65%, rgba(26, 34, 56, 0.3) 100%);
+    pointer-events: none;
+}
+
